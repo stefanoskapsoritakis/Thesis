@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: 67c7b81e3bfc8d34091b71c22a0f0f8d
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 3936713073770599377
+    second: rails|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 3484906352533298402
+    second: rails|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 7426492091971127581
+    second: rails|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -582176971477924735
+    second: rails|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -2678243912512057667
+    second: rails.002|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 7374767953269464520
+    second: rails.002|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -6580200444448923640
+    second: rails.002|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 2027189845186070067
+    second: rails.002|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -2269325078501323706
+    second: bolts_top.018|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 4714894442285262372
+    second: bolts_top.018|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 118018697629846908
+    second: bolts_top.018|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 988662217186571894
+    second: bolts_top.018|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 8066460637128188832
+    second: bolts_top.010|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 5972247111345419661
+    second: bolts_top.010|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 1114567918732723888
+    second: bolts_top.010|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -5076598849169937154
+    second: bolts_top.010|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 4656179531985695516
+    second: bolts_top.019|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -1634692189414558387
+    second: bolts_top.019|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 5283250310614681570
+    second: bolts_top.019|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 4668514974041349206
+    second: bolts_top.019|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 6562084616060838475
+    second: bolts_top.004|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 6595715792732034806
+    second: bolts_top.004|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -819391289009391475
+    second: bolts_top.004|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 4492981302209921603
+    second: bolts_top.004|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -8953909269956693622
+    second: bolts_top.017|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -6242424204019719885
+    second: bolts_top.017|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -7080122628754874408
+    second: bolts_top.017|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -8334365570776432449
+    second: bolts_top.017|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -4359148942358563204
+    second: mdl_railHolder_plate_low|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -3934942855158984460
+    second: mdl_railHolder_plate_low|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -7371161673483965827
+    second: mdl_railHolder_plate_low|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -8991463546337595493
+    second: mdl_railHolder_plate_low|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -1638093732965624590
+    second: mdl_railHolder_holder_low|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -8362551703934308052
+    second: mdl_railHolder_holder_low|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 2274062086809498618
+    second: mdl_railHolder_holder_low|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 6172446684131934295
+    second: mdl_railHolder_holder_low|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -7287764959625530914
+    second: mdl_railHolder_plate_high|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -608112727116730927
+    second: mdl_railHolder_plate_high|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 6412795807293855071
+    second: mdl_railHolder_plate_high|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 5853299438149389257
+    second: mdl_railHolder_plate_high|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -8084396405986399960
+    second: mdl_railHolder_holder_high|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 772794151483475028
+    second: mdl_railHolder_holder_high|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -5424099368611841484
+    second: mdl_railHolder_holder_high|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -8810493967345117927
+    second: mdl_railHolder_holder_high|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 4763216243294117621
+    second: mdl_rail_low|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 6543714818482118629
+    second: mdl_rail_low|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -3424378940100157793
+    second: mdl_rail_low|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 8711337769610906817
+    second: mdl_rail_low|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 6430919829868440118
+    second: mdl_rail_high|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 2696241660633842055
+    second: mdl_rail_high|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 7989261403370886627
+    second: mdl_rail_high|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -4608684457736288379
+    second: mdl_rail_high|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 1059459061539049096
+    second: mdl_sprinklerHead_01_main_high|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 8671319102079267919
+    second: mdl_sprinklerHead_01_main_high|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -7760896197724275759
+    second: mdl_sprinklerHead_01_main_high|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 8253339809752029674
+    second: mdl_sprinklerHead_01_main_high|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 4249953346489058464
+    second: mdl_sprinklerHead_01_pole_high|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 1102058720213685285
+    second: mdl_sprinklerHead_01_pole_high|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 1394551829649022959
+    second: mdl_sprinklerHead_01_pole_high|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 3765270257896378702
+    second: mdl_sprinklerHead_01_pole_high|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -7378988534631603982
+    second: mdl_sprinklerHead_01_pole_low|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -3137733836382681485
+    second: mdl_sprinklerHead_01_pole_low|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: 3520526386753161067
+    second: mdl_sprinklerHead_01_pole_low|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -3719374692820211691
+    second: mdl_sprinklerHead_01_pole_low|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 5897162317107585568
+    second: mdl_ceilingSmokeDetector_main_low|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: 5157165663521694517
+    second: mdl_ceilingSmokeDetector_main_low|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -6599269167083135087
+    second: mdl_ceilingSmokeDetector_main_low|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 2159018520635115169
+    second: mdl_ceilingSmokeDetector_main_low|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: 3633390709124734594
+    second: mdl_sprinklerHead_01_pole|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -8932026889928598661
+    second: mdl_sprinklerHead_01_pole|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -1962663774148897828
+    second: mdl_sprinklerHead_01_pole|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: 259113338318603683
+    second: mdl_sprinklerHead_01_pole|Cylinder005|Take 001|BaseLayer.003
+  - first:
+      74: -3660323679189523804
+    second: mdl_ceilingSmokeDetector_main|Cylinder005|Take 001|BaseLayer
+  - first:
+      74: -1542870355658298653
+    second: mdl_ceilingSmokeDetector_main|Cylinder005|Take 001|BaseLayer.001
+  - first:
+      74: -5680636886762083844
+    second: mdl_ceilingSmokeDetector_main|Cylinder005|Take 001|BaseLayer.002
+  - first:
+      74: -3905773885316567490
+    second: mdl_ceilingSmokeDetector_main|Cylinder005|Take 001|BaseLayer.003
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
