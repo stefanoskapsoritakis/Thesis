@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable] public class ObjectiveEvent : UnityEvent<Objective> { }
-[System.Serializable] public class ObjectiveProgressEvent : UnityEvent<float> { }
 
 public enum ObjectiveState
 {
@@ -15,59 +14,45 @@ public enum ObjectiveState
 
 public class Objective : MonoBehaviour
 {
-    [SerializeField] private ObjectiveState objectiveState;
+	[SerializeField] private bool startAutomatically;
 
-    private ObjectiveController objectiveController;
-    private bool initialized;
+	public ObjectiveEvent onObjectiveStarted;
+	public ObjectiveEvent onObjectiveCompleted;
 
-    [SerializeField] private ObjectiveEvent onObjectiveStarted;
-    public ObjectiveEvent OnObjectiveStarted { get { return onObjectiveStarted; } }
+	[SerializeField] private bool started;
+	[SerializeField] private bool completed;
 
-    [SerializeField] private ObjectiveEvent onObjectiveCompleted;
-    public ObjectiveEvent OnObjectiveCompleted { get { return onObjectiveCompleted; } }
+	void Start()
+	{
+		if (startAutomatically == false)
+			return;
 
-    public void Init(ObjectiveController controller)
-    {
-        initialized = true;
-        objectiveController = controller;
+		StartObjective();
+	}
 
-        objectiveController.OnObjectiveStarted.AddListener(StartObjective);
-        objectiveController.OnObjectiveCompleted.AddListener(CompleteObjective);
-    }
+	public void StartObjective()
+	{
+		started = true;
 
-    private void OnDestroy()
-    {
-        if (objectiveController == null)
-            return;
+		if (onObjectiveStarted != null)
+			onObjectiveStarted.Invoke(this);
+	}
 
-        objectiveController.OnObjectiveStarted.RemoveListener(StartObjective);
-        objectiveController.OnObjectiveCompleted.RemoveListener(CompleteObjective);
-    }
+	public void CompleteObjective()
+	{
+		if (started == false || completed == true)
+			return;
 
-    void StartObjective(Objective objective)
-    {
-        if (objective != this || objectiveState != ObjectiveState.Inactive)
-            return;
+		completed = true;
 
-        objectiveState = ObjectiveState.Started;
+		StartCoroutine(DelayedComplete());
+	}
 
-        if (onObjectiveStarted != null)
-            onObjectiveStarted.Invoke(this);
-    }
+	IEnumerator DelayedComplete()
+	{
+		yield return null;
 
-    void CompleteObjective(Objective objective)
-    {
-        if (objective != this || objectiveState != ObjectiveState.Started)
-            return;
-
-        objectiveState = ObjectiveState.Completed;
-
-        if (onObjectiveCompleted != null)
-            onObjectiveCompleted.Invoke(this);
-    }
-
-    void Start()
-    {
-        
-    }
+		if (onObjectiveCompleted != null)
+			onObjectiveCompleted.Invoke(this);
+	}
 }

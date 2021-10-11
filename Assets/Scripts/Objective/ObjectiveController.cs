@@ -4,61 +4,41 @@ using UnityEngine;
 
 public class ObjectiveController : MonoBehaviour
 {
-    [SerializeField] private int currentObjective;
-    [SerializeField] private int currentObjectiveIndex;
+	[SerializeField] private int currentObjectiveIndex;
 
-    [SerializeField] private List<Objective> objectives = new List<Objective>();
+	[SerializeField] private List<Objective> objectives = new List<Objective>();
 
-    private ObjectiveEvent onObjectiveStarted = new ObjectiveEvent();
-    public ObjectiveEvent OnObjectiveStarted { get { return onObjectiveStarted; } }
+	void OnEnable()
+	{
+		foreach (Objective obj in objectives)
+		{
+			obj.onObjectiveCompleted.AddListener(ObjectiveCompleted);
+		}
+	}
 
-    private ObjectiveEvent onObjectiveCompleted = new ObjectiveEvent();
-    public ObjectiveEvent OnObjectiveCompleted { get { return onObjectiveCompleted; } }
+	void OnDisable()
+	{
+		foreach (Objective obj in objectives)
+		{
+			obj.onObjectiveCompleted.RemoveListener(ObjectiveCompleted);
+		}
+	}
 
-    void Start()
-    {
-        StartCoroutine(StartObjective(objectives[0]));
-    }
+	void Start()
+	{
+		objectives[currentObjectiveIndex].StartObjective();
+	}
 
-    void OnEnable()
-    {
-        foreach (Objective obj in objectives)
-        {
-            if (obj != null)
-            {
-                obj.Init(this);
-            }
-        }
-    }
+	void ObjectiveCompleted(Objective obj)
+	{
+		int index = objectives.IndexOf(obj);
 
-    void OnDisable()
-    {
-        foreach (Objective obj in objectives)
-        {
-            if (obj != null)
-            {
+		if (index != currentObjectiveIndex)
+			return;
 
-            }
-        }
-    }
+		currentObjectiveIndex = ++index;
 
-    void CompleteObjective()
-    {
-        if (onObjectiveCompleted != null)
-            onObjectiveCompleted.Invoke(objectives[currentObjectiveIndex]);
-
-        currentObjectiveIndex++;
-
-        if (currentObjectiveIndex < objectives.Count)
-            StartCoroutine(StartObjective(objectives[currentObjectiveIndex]));
-    }
-    IEnumerator StartObjective(Objective objective)
-    {
-        if (objective == null)
-            yield break;
-
-
-        if (onObjectiveStarted != null)
-            onObjectiveStarted.Invoke(objective);
-    }
+		if (currentObjectiveIndex < objectives.Count)
+			objectives[currentObjectiveIndex].StartObjective();
+	}
 }
