@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6350467544963898841}
   m_Layer: 0
-  m_Name: mdl_azimuthLever
+  m_Name: ShipLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
