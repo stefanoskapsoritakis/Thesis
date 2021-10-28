@@ -29,5 +29,4 @@ public class HandGrabber : OVRGrabber
         else if (m_grabbedObj & !isPinching)
             GrabEnd();
     }
-
 }

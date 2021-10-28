@@ -93,7 +93,7 @@ public class GestureDetector : MonoBehaviour
             hasRecognize = !currentGesture.Equals(new Gesture());
 
             // and if the gesture is recognized
-            if (hasRecognize)
+            if (hasRecognize && done == false)//check if && done == false
             {
                 // we change another boolean to avoid a loop of event
                 done = true;

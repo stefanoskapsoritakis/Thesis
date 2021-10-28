@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ButtonActiveCheck : MonoBehaviour
 {
-    [SerializeField] GameObject buttonBase;
-    [SerializeField] public bool isOn;
 
     // Start is called before the first frame update
     void Start()
@@ -13,23 +11,21 @@ public class ButtonActiveCheck : MonoBehaviour
         
     }
 
-    void FixedUpdate()
+    void Update()
     {
         
     }
 
-    public void SwitchOn(bool set)
+    public void ToggleActive()
     {
-        isOn = set;
-
-        if (set == true)
+        Debug.Log("<color=red>called 1</color>");
+        if (gameObject.activeInHierarchy == true)
         {
-            buttonBase.SetActive(true);
+            gameObject.SetActive(false);
         }
-        else 
+        else
         {
-            buttonBase.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
-
 }

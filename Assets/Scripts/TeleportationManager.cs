@@ -7,6 +7,9 @@ public class TeleportationManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject destination;
+    [SerializeField] GameObject target;
+    [SerializeField] GameObject buttons;
+
 
     private bool isAiming = false;
     private GameObject currentDestination;
@@ -49,6 +52,7 @@ public class TeleportationManager : MonoBehaviour
             {
                 player.transform.position = currentDestination.transform.position;
                 currentDestination.SetActive(false);
+                TeleportButtons(); 
             }
         }
     }
@@ -63,6 +67,11 @@ public class TeleportationManager : MonoBehaviour
                 currentDestination.SetActive(false);
             }
         }
+    }
+
+    public void TeleportButtons()
+    {
+        buttons.transform.position = target.transform.position;
     }
 
 }
