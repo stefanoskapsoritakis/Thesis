@@ -7,7 +7,7 @@ using System;
 
 // struct = class without functions
 [System.Serializable]
-public struct Gesture
+public class Gesture
 {
     public string name;
     public List<Vector3> fingerDatas;
@@ -20,6 +20,7 @@ public class GestureDetector : MonoBehaviour
     // How much accurate the recognize should be
     [Header("Threshold value")]
     public float threshold = 0.1f;
+    public float gestureCooldown = 0f;
 
     // Add the component that refer to the skeleton hand ("OVRCustomHandPrefab_R" or "OVRCustomHandPrefab_L")
     [Header("Hand Skeleton")]
@@ -38,8 +39,11 @@ public class GestureDetector : MonoBehaviour
 
     // Other boolean to check if are working correctly
     private bool hasStarted = false;
-    private bool hasRecognize = false;
-    private bool done = false;
+    //private bool hasRecognize = false;
+    //private bool done = false;
+    //private float recognizedTime = 0;
+
+    private Gesture lastGesture = new Gesture();
 
     // Add an event if you want to make happen when a gesture is not identified
     [Header("Not Recognized Event")]
@@ -90,26 +94,31 @@ public class GestureDetector : MonoBehaviour
 
             // we will associate the recognize to a boolean to see if the Gesture
             // we are going to make is one of the gesture we already saved
-            hasRecognize = !currentGesture.Equals(new Gesture());
+            //hasRecognize = !currentGesture.Equals(new Gesture());
 
             // and if the gesture is recognized
-            if (hasRecognize && done == false)//check if && done == false
+            //if (hasRecognize && Time.time > recognizedTime + gestureCooldown)
+            if (currentGesture != lastGesture && currentGesture != null)
             {
+                lastGesture = currentGesture;
+                //recognizedTime = Time.time;
                 // we change another boolean to avoid a loop of event
-                done = true;
+                //done = true;
 
+                Debug.Log("<color=red>Gesture Detected!</color>");
                 // after that i will invoke what put in the Event if is present
                 currentGesture.onRecognized?.Invoke();
             }
             // if the gesture we done is no more recognized
-            else
+            else if (lastGesture != null && currentGesture == null)
             {
+                lastGesture = null;
                 // and we just activated the boolean from earlier
-                if (done)
+                //if (done)
                 {
-                    Debug.Log("Not Recognized");
+                    Debug.Log("<color=blue>Not Recognized</color>");
                     // we set to false the boolean again, so this will not loop
-                    done = false;
+                    //done = false;
 
                     // and finally we will invoke an event when we end to make the previous gesture
                     notRecognize?.Invoke();
@@ -148,7 +157,7 @@ public class GestureDetector : MonoBehaviour
     Gesture Recognize()
     {
         // in the Update if we initialized correctly, we create a new Gesture
-        Gesture currentGesture = new Gesture();
+        Gesture currentGesture = null;
 
         // we set a new float of a positive infinity
         float currentMin = Mathf.Infinity;
