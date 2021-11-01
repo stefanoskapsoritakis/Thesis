@@ -18,7 +18,7 @@ public class ButtonActiveCheck : MonoBehaviour
 
     public void ToggleActive()
     {
-        Debug.Log("<color=red>called 1</color>");
+        //Debug.Log("<color=red>called 1</color>");
         if (gameObject.activeInHierarchy == true)
         {
             gameObject.SetActive(false);

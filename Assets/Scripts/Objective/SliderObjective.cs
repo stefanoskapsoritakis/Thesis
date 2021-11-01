@@ -7,6 +7,8 @@ public class SliderObjective : MonoBehaviour
 {
     [SerializeField] GameObject pin;
     [SerializeField] UnityEvent CompleteTask;
+    [SerializeField] float offset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,11 @@ public class SliderObjective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pin.transform.position.x >= 0.55 && pin.transform.position.x <= 0.65 && pin.transform.position.z <= -0.55 && pin.transform.position.z >= -0.65)
+        if (pin.transform.position.x <= transform.position.x + offset
+            && pin.transform.position.x >= transform.position.x - offset
+            && pin.transform.position.z <= transform.position.z + offset
+            && pin.transform.position.z >= transform.position.z - offset)
             CompleteTask.Invoke();
     }
+
 }

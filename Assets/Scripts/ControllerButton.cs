@@ -45,13 +45,13 @@ public class ControllerButton : MonoBehaviour
     {
         isPressed = true;
         onPressed.Invoke();
-        Debug.LogError("Pressed");
+        //Debug.LogError("Pressed");
     }
 
     private void Released()
     {
         isPressed = false;
         onReleased.Invoke();
-        Debug.LogError("Released");
+        //Debug.LogError("Released");
     }
 }

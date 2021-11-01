@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class PositionControl : MonoBehaviour
 {
+    
     [SerializeField] bool isVert;
+
+    [Header("Vertical Control Variables")]
+    [SerializeField] float minZPos;
+    [SerializeField] float maxZPos;
+
+    [Header("Horizontal Control Variables")]
+    [SerializeField] float minXPos;
+    [SerializeField] float maxXPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,37 +36,37 @@ public class PositionControl : MonoBehaviour
     }
     void VerticalControl()
     {
-        if (gameObject.transform.position.y != 1f || gameObject.transform.position.x != 0.5f)
+        if (gameObject.transform.position.y != 1.11f || gameObject.transform.position.x != 0.25f)
         {
-            Vector3 controlPosition = new Vector3(0.5f, 1f, transform.position.z);
+            Vector3 controlPosition = new Vector3(0.25f, 1.11f, transform.position.z);
             transform.position = controlPosition;
         }
-        if (gameObject.transform.position.z > -0.5f)
+        if (gameObject.transform.position.z > maxZPos)
         {
-            Vector3 xPos = new Vector3(transform.position.x, transform.position.y, -0.5f);
+            Vector3 xPos = new Vector3(transform.position.x, transform.position.y, maxZPos);
             transform.position = xPos;
         }
-        if (gameObject.transform.position.z < -0.9f)
+        if (gameObject.transform.position.z < minZPos)
         {
-            Vector3 xPos = new Vector3(transform.position.x, transform.position.y, -0.9f);
+            Vector3 xPos = new Vector3(transform.position.x, transform.position.y, minZPos);
             transform.position = xPos;
         }
     }
     void HorizontalControl()
     {
-        if (gameObject.transform.position.y != 1f || gameObject.transform.position.z != -1f)
+        if (gameObject.transform.position.y != 1.11f || gameObject.transform.position.z != 1.4f)
         {
-            Vector3 controlPosition = new Vector3(transform.position.x, 1f, -1f);
+            Vector3 controlPosition = new Vector3(transform.position.x, 1.11f, 1.4f);
             transform.position = controlPosition;
         }
-        if (gameObject.transform.position.x > 1f)
+        if (gameObject.transform.position.x > maxXPos)
         {
-            Vector3 xPos = new Vector3(1f, transform.position.y, transform.position.z);
+            Vector3 xPos = new Vector3(maxXPos, transform.position.y, transform.position.z);
             transform.position = xPos;
         }
-        if (gameObject.transform.position.x < 0.6f)
+        if (gameObject.transform.position.x < minXPos)
         {
-            Vector3 xPos = new Vector3(0.6f, transform.position.y, transform.position.z);
+            Vector3 xPos = new Vector3(minXPos, transform.position.y, transform.position.z);
             transform.position = xPos;
         }
     }
