@@ -36,9 +36,9 @@ public class PositionControl : MonoBehaviour
     }
     void VerticalControl()
     {
-        if (gameObject.transform.position.y != 1.11f || gameObject.transform.position.x != 0.25f)
+        if (gameObject.transform.position.y != 0.86f || gameObject.transform.position.x != 0.25f)
         {
-            Vector3 controlPosition = new Vector3(0.25f, 1.11f, transform.position.z);
+            Vector3 controlPosition = new Vector3(0.25f, 0.86f, transform.position.z);
             transform.position = controlPosition;
         }
         if (gameObject.transform.position.z > maxZPos)
@@ -54,9 +54,9 @@ public class PositionControl : MonoBehaviour
     }
     void HorizontalControl()
     {
-        if (gameObject.transform.position.y != 1.11f || gameObject.transform.position.z != 1.4f)
+        if (gameObject.transform.position.y != 0.86f || gameObject.transform.position.z != 1.4f)
         {
-            Vector3 controlPosition = new Vector3(transform.position.x, 1.11f, 1.4f);
+            Vector3 controlPosition = new Vector3(transform.position.x, 0.86f, 1.4f);
             transform.position = controlPosition;
         }
         if (gameObject.transform.position.x > maxXPos)

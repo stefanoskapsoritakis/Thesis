@@ -68,7 +68,16 @@ public class TeleportationManager : MonoBehaviour
             }
         }
     }
+    public void HandSwitch()
+    {
+        
+        isAiming = !isAiming;
 
+        if (!isAiming)
+        {
+            currentDestination.SetActive(false);
+        }
+    }
     public void TeleportButtons()
     {
         buttons.transform.position = target.transform.position;

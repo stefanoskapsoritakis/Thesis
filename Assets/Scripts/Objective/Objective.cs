@@ -14,13 +14,16 @@ public enum ObjectiveState
 
 public class Objective : MonoBehaviour
 {
+	[SerializeField] float delay;
+
 	[SerializeField] private bool startAutomatically;
+	[SerializeField] private bool started;
+	[SerializeField] private bool completed;
 
 	public ObjectiveEvent onObjectiveStarted;
 	public ObjectiveEvent onObjectiveCompleted;
 
-	[SerializeField] private bool started;
-	[SerializeField] private bool completed;
+	
 
 	void Start()
 	{
@@ -50,7 +53,7 @@ public class Objective : MonoBehaviour
 
 	IEnumerator DelayedComplete()
 	{
-		yield return null;
+		yield return new WaitForSeconds(delay);
 
 		if (onObjectiveCompleted != null)
 			onObjectiveCompleted.Invoke(this);
