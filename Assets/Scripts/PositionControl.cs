@@ -6,25 +6,31 @@ public class PositionControl : MonoBehaviour
 {
     
     [SerializeField] bool isVert;
-
+    float defautY;
+    float defautZ;
+    float defautX;
     [Header("Vertical Control Variables")]
-    [SerializeField] float minZPos;
-    [SerializeField] float maxZPos;
-
+   
+    [SerializeField] float zAxisMaxLimit;
+    [SerializeField] float zAxisMinLimit;
+    
     [Header("Horizontal Control Variables")]
-    [SerializeField] float minXPos;
-    [SerializeField] float maxXPos;
+    
+    [SerializeField] float xAxisMaxLimit;
+    [SerializeField] float xAxisMinLimit;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        defautY = transform.localPosition.y;
+        defautX = transform.localPosition.x;
+        defautZ = transform.localPosition.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isVert == true)
+        if (isVert)
         {
             VerticalControl();
         }
@@ -36,38 +42,38 @@ public class PositionControl : MonoBehaviour
     }
     void VerticalControl()
     {
-        if (gameObject.transform.position.y != 0.86f || gameObject.transform.position.x != 0.25f)
+        if (transform.localPosition.y != defautY || transform.localPosition.x != defautX)
         {
-            Vector3 controlPosition = new Vector3(0.25f, 0.86f, transform.position.z);
-            transform.position = controlPosition;
+            Vector3 controlPosition = new Vector3(defautX, defautY, transform.localPosition.z);
+            transform.localPosition = controlPosition;
         }
-        if (gameObject.transform.position.z > maxZPos)
+        if (transform.localPosition.z > zAxisMaxLimit)
         {
-            Vector3 xPos = new Vector3(transform.position.x, transform.position.y, maxZPos);
-            transform.position = xPos;
+            Vector3 xPos = new Vector3(transform.localPosition.x, transform.localPosition.y, zAxisMaxLimit);
+            transform.localPosition = xPos;
         }
-        if (gameObject.transform.position.z < minZPos)
+        if (transform.localPosition.z < zAxisMinLimit)
         {
-            Vector3 xPos = new Vector3(transform.position.x, transform.position.y, minZPos);
-            transform.position = xPos;
+            Vector3 xPos = new Vector3(transform.localPosition.x, transform.localPosition.y, zAxisMinLimit);
+            transform.localPosition = xPos;
         }
     }
     void HorizontalControl()
     {
-        if (gameObject.transform.position.y != 0.86f || gameObject.transform.position.z != 1.4f)
+        if (transform.localPosition.y != defautY || transform.localPosition.z != defautZ)
         {
-            Vector3 controlPosition = new Vector3(transform.position.x, 0.86f, 1.4f);
-            transform.position = controlPosition;
+            Vector3 controlPosition = new Vector3(transform.localPosition.x, defautY, defautZ);
+            transform.localPosition = controlPosition;
         }
-        if (gameObject.transform.position.x > maxXPos)
+        if (transform.localPosition.x > xAxisMaxLimit)
         {
-            Vector3 xPos = new Vector3(maxXPos, transform.position.y, transform.position.z);
-            transform.position = xPos;
+            Vector3 xPos = new Vector3(xAxisMaxLimit, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = xPos;
         }
-        if (gameObject.transform.position.x < minXPos)
+        if (transform.localPosition.x < xAxisMinLimit)
         {
-            Vector3 xPos = new Vector3(minXPos, transform.position.y, transform.position.z);
-            transform.position = xPos;
+            Vector3 xPos = new Vector3(xAxisMinLimit, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = xPos;
         }
     }
 }
