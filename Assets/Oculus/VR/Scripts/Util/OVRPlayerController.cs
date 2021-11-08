@@ -415,7 +415,7 @@ public class OVRPlayerController : MonoBehaviour
 									   Vector3.right);
 		}*/
 
-		if (EnableRotation)
+		/*if (EnableRotation)
 		{
 			Vector3 euler = RotateAroundGuardianCenter ? transform.rotation.eulerAngles : Vector3.zero;
 			float rotateInfluence = SimulationRate * Time.deltaTime * RotationAmount * RotationScaleMultiplier;
@@ -490,7 +490,7 @@ public class OVRPlayerController : MonoBehaviour
 			{
 				transform.RotateAround(CameraRig.centerEyeAnchor.position, Vector3.up, euler.y);
 			}
-		}
+		}*/
 	}
 
 
