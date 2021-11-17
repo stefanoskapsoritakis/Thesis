@@ -788,7 +788,9 @@ public class LocomotionTeleport : MonoBehaviour
 			Teleported(characterTransform, destPosition, destRotation);
 		}
 
-		characterTransform.position = destPosition;
+		//characterTransform.position = destPosition;
+		Vector3 headOffset = new Vector3(Camera.main.transform.localPosition.x, 0f, Camera.main.transform.localPosition.z);
+		characterTransform.transform.position = characterTransform.transform.TransformPoint(characterTransform.transform.InverseTransformPoint(destPosition) + -headOffset);
 		characterTransform.rotation = destRotation;
 		character.enabled = true;
 	}

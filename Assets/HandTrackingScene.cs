@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using OculusSampleFramework;
+using UnityEngine.Events;
 
 public class HandTrackingScene : MonoBehaviour
 {
@@ -24,5 +26,16 @@ public class HandTrackingScene : MonoBehaviour
     {
         SceneManager.LoadScene("ControllerScene");
     }
-
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.LogError("this was called");
+    }
+    public void Quit(InteractableStateArgs stateArg)
+    {
+        if (stateArg.NewInteractableState == InteractableState.ActionState)
+        {
+            Application.Quit();
+        }
+    }
 }

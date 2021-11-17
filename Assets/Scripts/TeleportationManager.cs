@@ -50,7 +50,9 @@ public class TeleportationManager : MonoBehaviour
         {
             if (isAiming && currentDestination.activeSelf)
             {
-                player.transform.position = currentDestination.transform.position;
+                //player.transform.position = currentDestination.transform.position;
+                Vector3 headOffset = new Vector3(Camera.main.transform.localPosition.x, 0f, Camera.main.transform.localPosition.z);
+                player.transform.position = player.transform.TransformPoint(player.transform.InverseTransformPoint(currentDestination.transform.position) + -headOffset);
                 currentDestination.SetActive(false);
                 TeleportButtons(); 
             }
